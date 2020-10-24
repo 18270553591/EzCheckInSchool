@@ -31,15 +31,11 @@ def main():
 
     # 时间判断 Github Actions采用国际标准时
     hms = update_time()
-    if (hms[0] >= 6) & (hms[0] < 8):
-        customer_app_type_rule_id = 146
-    elif (hms[0] >= 12) & (hms[0] < 14):
+    if (hms[0] >= 11) & (hms[0] < 15):
         customer_app_type_rule_id = 147
-    elif (hms[0] >= 21) & (hms[0] < 22):
-        customer_app_type_rule_id = 148
     else:
         print('未到打卡时间，将重打早间卡测试')
-        customer_app_type_rule_id = 146
+        customer_app_type_rule_id = 147
 
     for index, value in enumerate(user_id):
         time_msg = str(hms[0]) + '时' + str(hms[1]) + '分' + str(hms[2]) + '秒'
@@ -151,8 +147,10 @@ def get_check_json(stu_name, stu_id, dept_text, customer_app_type_rule_id):
                 }
             ],
             "customerAppTypeRuleId": customer_app_type_rule_id,
-            "clockState": 0
+            "clockState": 0,
+            "token":"65a9a54e-a014-41f9-8452-3ad61075e050"
         },
+        "token":"65a9a54e-a014-41f9-8452-3ad61075e050"
     }
 
 
